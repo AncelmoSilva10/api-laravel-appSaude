@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('nomeUsuario');
             $table->string('senhaUsuario');
             $table->string('emailUsuario');
-            $table->string('dataNascUsuario');
+            $table->date('dataNascUsuario');
             $table->string('generoUsuario');
             $table->string('fotoUsuario');
-            $table->string('alturaUsuario');
-            $table->string('pesoUsuario');
+            $table->float('alturaUsuario');
+            $table->float('pesoUsuario');
             $table->timestamps();
         });
     }

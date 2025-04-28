@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\UsuarioModel;
 use Illuminate\Http\Request;
+
 
 class UsuarioController extends Controller
 {
@@ -14,7 +16,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $usuario = UsuarioModel :: all();
+        return $usuario;
     }
 
     /**
@@ -36,6 +39,22 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function storeapi(Request $request)
+    {
+        $usuario = new usuarioModel();
+
+        $usuario->nomeUsuario = $request->nomeUsuario;
+        $usuario->senhaUsuario = $request->senhaUsuario;
+        $usuario->emailUsuario = $request->emailUsuario;
+        $usuario->dataNascUsuario = $request->dataNascUsuario;
+        $usuario->generoUsuario = $request->generoUsuario;
+        $usuario->fotoUsuario = $request->fotoUsuario;
+        $usuario->alturaUsuario = $request->alturaUsuario;
+        $usuario->pesoUsuario = $request->pesoUsuario;
+        
+        $usuario->save();
     }
 
     /**
